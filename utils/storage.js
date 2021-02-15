@@ -45,7 +45,7 @@ const getOrder = (id) => {
     }
     const order = value.filter(obj => obj.orderId == id)
     console.log(order[0])
-    return order[0];
+    return (order[0] || []);
 }
 
 
