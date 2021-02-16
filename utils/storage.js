@@ -12,7 +12,7 @@ const addOrder = (obj) => {
     if ( value == undefined ){
         result.success = myCache.set( 'orders', [obj]);
         result.message = 'Orden creada';
-        console.log(myCache.get( 'orders' ));
+        // console.log(myCache.get( 'orders' ));
     } else {
         const order = value.filter(odr => odr.external_order_number == obj.external_order_number)
         console.log(order);
@@ -25,7 +25,7 @@ const addOrder = (obj) => {
         value.push(obj)
         result.success = myCache.set( 'orders', value);
         result.message = 'Orden creada';
-        console.log(myCache.get( 'orders' ))
+        // console.log(myCache.get( 'orders' ))
     }
     return result;
 }
@@ -44,7 +44,7 @@ const getOrder = (id) => {
         return []
     }
     const order = value.filter(obj => obj.external_order_number == id)
-    console.log(order[0])
+    // console.log(order[0])
     return (order[0] || []);
 }
 
