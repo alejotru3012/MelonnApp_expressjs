@@ -2,17 +2,18 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 
 var ordersRouter = require('./routes/orders');
 
 var app = express();
 
+// configure the app to use bodyParser()
 app.use(bodyParser.urlencoded({
-    extended: false
+    extended: true
 }));
-// parse application/json
 app.use(bodyParser.json());
+
 
 app.use(logger('dev'));
 app.use(express.json());
