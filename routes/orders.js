@@ -7,7 +7,7 @@ let st = require('../utils/storage');
 /* GET orders listing. */
 router.post('/create', function(req, res, next) {
     console.log(req.body)
-    res.send(st.addOrder(req.body));
+    res.send(st.addOrder(JSON.parse(req.body)));
 });
 
 /* GET orders listing. */
