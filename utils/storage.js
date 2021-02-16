@@ -14,7 +14,7 @@ const addOrder = (obj) => {
         result.message = 'Orden creada';
         console.log(myCache.get( 'orders' ));
     } else {
-        const order = value.filter(odr => odr.orderId == obj.orderId)
+        const order = value.filter(odr => odr.external_order_number == obj.external_order_number)
         console.log(order);
         if (order.length != 0) {
             return {
@@ -43,7 +43,7 @@ const getOrder = (id) => {
     if ( value == undefined ){
         return []
     }
-    const order = value.filter(obj => obj.orderId == id)
+    const order = value.filter(obj => obj.external_order_number == id)
     console.log(order[0])
     return (order[0] || []);
 }
