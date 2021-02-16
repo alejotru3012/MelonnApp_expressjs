@@ -9,7 +9,7 @@ var ordersRouter = require('./routes/orders');
 var app = express();
 
 app.use(bodyParser.urlencoded({
-    extended: true
+    extended: false
 }));
 // parse application/json
 app.use(bodyParser.json());
